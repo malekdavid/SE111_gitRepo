@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W6 | Pay Calculator</title>
+</head>
+<body>
+
+    <h1>Week 6 | Bi-Weekly Pay Calculator</h1>
+
+    <script>
+
+                console.log("WELCOME TO THE UNCLE SAME MACHINE! >:)\n\n")
+                alert("Hello Tax Payer, follow directions closely, and we will have no issues.")
+        var name = prompt(`Enter Name: `)
+                console.log(`Customers name is ${name}.\n\n`)
+
+        var hourly = Number(prompt(`${name}, What is your hourly rate of pay?\n\n`))
+                console.log(`Customers hourly rate of pay is ${hourly.toFixed(2)}\n\n`)
+
+        var hours = Number(prompt(`${name}, How many hours a week do you work over a two week period?\n\n`))
+                console.log(`Customers hours worked over a two week period is ${hours.toFixed(2)}\n\n\n\n`)
+
+        var tax = .8
+        var gross = hours * hourly
+        var net = gross * tax
+        var uncle_sam = gross - net
+                console.log(`Gross Pay:     $ ${gross.toFixed(2)}`)
+                console.log(`Net Pay:       $ ${net.toFixed(2)}`)
+                console.log(`Taxes Removed: $ ${uncle_sam.toFixed(2)}\n\n`)
+                console.log(`Thank you for cooperating, ${name}... See you in two weeks for some more tax fun. >:)`)
+
+        //GITHUB ACCESS TOKEN --can now be used in terminal to replace password: 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
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
+
