@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="David Malek">
+    <meta name="description" content="Week 7 Assignment practicing Javascript & HTML">
+    <title>Week 7 | Pay Form Calculator Assignment</title>
+</head>
+<body>
+
+   
+   <h1> Pay Calculator Form </h1>
+   
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <label for="first">First Name: </label>
+                    <input type="text" id="first">
+                </td>
+            </tr>
+        <br>
+
+            <tr>
+                <td>
+                    <label for="last">Last Name: </label>
+                    <input type="text" id="last">
+                </td>
+            </tr>
+        <br>
+            <tr>
+                <td>
+                    <label for="hours">Hours Worked: </label>
+                    <input type="text" id="hours">
+                </td>
+            </tr>
+        <br>
+            <tr>
+                <td>
+                    <label for="rate">Hourly Rate: </label>
+                    <input type="text" id="rate">
+                </td>
+            </tr>
+
+        <br>
+        </table>
+        <br>
+
+
+        <input type="button" id="enter-button" value="Enter">
+
+        <br>
+        <br>
+
+        <div id="final" style="border:1px solid rgb(87, 86, 86); padding:15px; background-color:rgb(168, 168, 168);">
+
+            <h3>Employee Info: </h3>
+            <p id="info" style="font-family:Courier New, monospace;"><i>Information will be loaded once above form is filled.</i></p>
+           
+            <p id="check" style="font-family:Courier New, monospace; width:220px; text-align:right;"></p>
+        </div>
+
+        <br>
+        
+        <br>
+
+        <h3><i>If the above information is correct, please press "SUBMIT"</i></h3>
+        <input type="button" id="submit" value="SUBMIT">
+    </form>
+
+    <script>
+        
+        document.querySelector(`#enter-button`).addEventListener(`click`, alertName)
+        
+        
+
+        function alertName(e)
+        {
+            
+            var fname = document.querySelector(`#first`).value
+            var lname = document.querySelector(`#last`).value
+            var hours = document.querySelector(`#hours`).value
+            var rate = document.querySelector(`#rate`).value
+            
+            
+            console.log(fname)
+            console.log(lname)
+            console.log(hours)
+            console.log(rate)
+
+           
+            var full = fname + ` ` + lname
+
+            
+            console.log(full)
+
+            hours = Number(hours)
+            rate = Number(rate)
+
+
+            
+
+            var gross = hours * rate
+            var tax = .8
+            var net = gross * tax
+            var uncle_sam = gross - net
+            
+            
+
+            
+            console.log(gross.toFixed(2))
+            console.log(net.toFixed(2))
+            console.log(uncle_sam.toFixed(2))
+
+            var finalMessage = `<br>Here is some info on your income information. <br><br>YOUR NAME: ${full}<br><br>HOURS WORKED: ${hours}<br>HOURLY RATE: ${rate}`
+
+        
+            
+            var info = document.querySelector(`#info`)
+
+
+            
+            var num = document.querySelector(`#check`)
+            
+
+            
+            info.innerHTML += `<br>Here is some info on your income information. <br><br>YOUR NAME: ${full}<br><br>HOURS WORKED: ${hours}<br>HOURLY RATE: ${rate}`
+
+
+            check.innerHTML += `<br>Here is your final wage information. <br><br>YOUR GROSS: ${gross}<br><br>TAX AMOUNT: ${uncle_sam}<br>NET PAY: ${net}`
+
+
+
+            document.querySelector(`#submit`).addEventListener(`click`, submitNow)
+
+        
+            function submitNow(e)
+            {
+
+        
+
+                alert(`${full}\nHOURS: ${hours}\nRATE: $${rate.toFixed(2)}\n\nGROSS PAY: $${gross.toFixed(2)}\nTAX AMOUNT: $${uncle_sam.toFixed(2)}\nNET PAY: $${net.toFixed(2)}`)
+            }
+            
+        }
+        
+    </script>
+    
+</body>
+</html>
